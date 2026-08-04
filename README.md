@@ -1,17 +1,21 @@
-# mcp-fmi
+# @pipeworx/fmi
 
-FMI MCP — Finnish Meteorological Institute open WFS.
+Finnish Meteorological Institute (FMI) MCP — observations, forecast, climate, and warnings for Finland (and limited Europe coverage). Keyless.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
+
+> FMI's open data is served via OGC WFS (GML/XML). This pack normalizes a small subset of stored queries to JSON for typical agent use.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `forecast` | Multi-hour HARMONIE forecast for a place name in Finland (60 h ahead). |
-| `latest_observations` | Most recent observation values for a place. |
-| `recent_observations` | Last N hours of observations. |
-| `warnings` | Currently active weather warnings (Finland, ISO bulletin XML returned as text). |
+- `forecast(place, parameters?, timestep?)` — multi-hour forecast for a place name
+- `latest_observations(place, parameters?)` — most recent observation values
+- `recent_observations(place, parameters?, hours?)` — last N hours of observations
+- `warnings()` — currently active weather warnings (Finland)
+
+## Data source
+
+`https://opendata.fmi.fi/wfs` (OGC WFS stored queries).
 
 ## Quick Start
 
@@ -27,7 +31,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -51,7 +55,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
