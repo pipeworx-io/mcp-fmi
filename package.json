@@ -1,20 +1,32 @@
 {
   "name": "@pipeworx/mcp-fmi",
-  "version": "0.1.0",
-  "description": "Finnish Meteorological Institute open data (forecast, observations, warnings)",
+  "version": "0.1.1",
+  "description": "FMI MCP — Finnish Meteorological Institute open WFS.",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",
+  "bin": {
+    "mcp-fmi": "bin/cli.js"
+  },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "fmi"],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pipeworx-io/mcp-fmi"
+    "url": "git+https://github.com/pipeworx-io/mcp-fmi.git"
   },
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "tsx": "^4.19.0"
+  },
   "devDependencies": {
-    "typescript": "^5.7.0"
+    "typescript": "^5.9.3",
+    "@cloudflare/workers-types": "^4.20260405.1"
+  },
+  "pipeworx": {
+    "sourceHash": "v1-048c1c99f9008dfe70ad00a9aa770a39404e657ed63bfdb49b5a7776857c9805",
+    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
   }
 }
