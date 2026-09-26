@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/fmi",
   "title": "Fmi",
   "description": "FMI MCP — Finnish Meteorological Institute open WFS.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "websiteUrl": "https://pipeworx.io/packs/fmi",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-fmi",

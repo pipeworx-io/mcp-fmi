@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-fmi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "FMI MCP — Finnish Meteorological Institute open WFS.",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-048c1c99f9008dfe70ad00a9aa770a39404e657ed63bfdb49b5a7776857c9805",
-    "sourceCommit": "76aa8f5d9b5dc2f665563030647c68e661478864"
+    "sourceHash": "v1-b4066c41f58a10e96631d97f60f8c0f3cb15dc5baf633b97f1b9f96ef8f59625",
+    "sourceCommit": "91681e9a4a137fa0051d58e32f38c64b6334af5c"
   }
 }
