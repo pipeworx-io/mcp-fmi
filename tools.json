@@ -1,0 +1,87 @@
+[
+  {
+    "name": "forecast",
+    "description": "Multi-hour HARMONIE forecast for a place name in Finland (60 h ahead).",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "place": {
+          "type": "string",
+          "description": "e.g. \"Helsinki\""
+        },
+        "parameters": {
+          "type": "string",
+          "description": "Comma-sep, e.g. \"temperature,humidity,windspeedms\". Default common set."
+        },
+        "timestep": {
+          "type": "number",
+          "description": "Minutes (default 60)."
+        }
+      },
+      "required": [
+        "place"
+      ]
+    }
+  },
+  {
+    "name": "latest_observations",
+    "description": "Returns the single most-recent observed value per weather parameter (temperature, humidity, wind speed, etc.) for a named place in Finland from the FMI WFS real-time observation feed.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "place": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "place"
+      ]
+    }
+  },
+  {
+    "name": "recent_observations",
+    "description": "Returns time-series weather observations for a named place in Finland over the last 1–48 hours (default 6 h), with one row per parameter per timestamp including lat/lon, parameter name, and value.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "place": {
+          "type": "string"
+        },
+        "parameters": {
+          "type": "string"
+        },
+        "hours": {
+          "type": "number",
+          "description": "1-48 (default 6)"
+        }
+      },
+      "required": [
+        "place"
+      ]
+    }
+  },
+  {
+    "name": "warnings",
+    "description": "Active FMI weather warnings for Finland (thunderstorm, wind, rain, snow, cold, forest fire, sea) — English headline, severity, colour, valid-from/to and the affected regions for each.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "limit": {
+          "type": "number",
+          "description": "1-100 (default 25)."
+        },
+        "severity": {
+          "type": "string",
+          "description": "Filter by CAP severity: Minor | Moderate | Severe | Extreme."
+        },
+        "include_expired": {
+          "type": "boolean",
+          "description": "Include warnings whose validity window has already passed (default false)."
+        }
+      }
+    }
+  }
+]
